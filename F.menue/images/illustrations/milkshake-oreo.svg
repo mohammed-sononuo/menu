@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <ellipse cx="100" cy="186" rx="46" ry="6" fill="#2B1E18" opacity=".12"/>
+  <!-- cookies & cream -->
+  <path d="M55.5 76h89l-8.9 100a6 6 0 0 1-6 5.5H70.4a6 6 0 0 1-6-5.5z" fill="#DCD2C8"/>
+  <g fill="#3A2C26">
+    <circle cx="72" cy="100" r="2.4"/><circle cx="90" cy="92" r="1.8"/><circle cx="118" cy="98" r="2.6"/><circle cx="130" cy="114" r="1.8"/>
+    <circle cx="80" cy="124" r="2"/><circle cx="104" cy="118" r="2.6"/><circle cx="122" cy="140" r="2.2"/><circle cx="74" cy="150" r="2.6"/>
+    <circle cx="96" cy="146" r="1.8"/><circle cx="112" cy="164" r="2.4"/><circle cx="86" cy="170" r="1.8"/><circle cx="128" cy="160" r="1.6"/>
+    <rect x="96" y="132" width="5" height="3" rx="1.2" transform="rotate(25 98 133)"/>
+    <rect x="66" y="132" width="5" height="3" rx="1.2" transform="rotate(-20 68 133)"/>
+  </g>
+  <!-- chocolate drips -->
+  <path d="M56 76h88l-.6 7c-3 0-4 4-4 12s-6 8-6 0-2-9-6-9-4 18-9 18-4-14-8-14-4 26-9 26-4-22-8-22-3 10-8 10-4-16-8-16-4 6-8 6-5-4-6-8z" fill="#4A2A1C"/>
+  <!-- cup -->
+  <path d="M53 70h94l-9.6 106.2a6 6 0 0 1-6 5.8H68.6a6 6 0 0 1-6-5.8z" fill="#FFFFFF" fill-opacity=".12" stroke="#CDBDAA" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M60 82l7.5 90" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity=".5"/>
+  <rect x="49" y="64" width="102" height="10" rx="5" fill="#E6DACB"/>
+  <!-- whipped cream -->
+  <path d="M62 70c-8-2-8-14 2-15-4-10 8-17 16-11 2-11 18-14 24-5 6-7 20-4 20 6 10-2 16 8 10 14 8 2 6 12-2 11z" fill="#FFFCF6"/>
+  <path d="M74 56c6-4 14-4 20 0M106 48c6-2 12 0 15 4" stroke="#EFE5D6" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <g fill="#3A2C26"><circle cx="80" cy="62" r="2"/><circle cx="96" cy="54" r="1.6"/><circle cx="112" cy="62" r="2"/><circle cx="70" cy="66" r="1.4"/><circle cx="126" cy="66" r="1.6"/></g>
+  <!-- chocolate drizzle on cream -->
+  <path d="M68 62c8-6 14 4 22-2s12 4 20-2 12 4 18-1" fill="none" stroke="#4A2A1C" stroke-width="3.2" stroke-linecap="round"/>
+  <!-- straw -->
+  <rect x="84" y="10" width="8" height="48" rx="4" fill="#8A5A3C" transform="rotate(-12 88 34)"/>
+  <!-- cookie -->
+  <g transform="rotate(18 132 36)">
+    <circle cx="132" cy="36" r="18" fill="#2E2420"/>
+    <circle cx="132" cy="36" r="13" fill="none" stroke="#45362F" stroke-width="2"/>
+    <g fill="#45362F"><circle cx="132" cy="28" r="1.8"/><circle cx="125" cy="36" r="1.8"/><circle cx="139" cy="36" r="1.8"/><circle cx="132" cy="44" r="1.8"/><circle cx="132" cy="36" r="2.4"/></g>
+    <path d="M114.5 40a18 18 0 0 0 35 0" fill="none" stroke="#F5EFE6" stroke-width="2.6"/>
+  </g>
+</svg>
