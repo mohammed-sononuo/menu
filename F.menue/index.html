@@ -26,7 +26,8 @@
   (function () {
     var t = null;
     try { t = localStorage.getItem("fk-theme"); } catch (e) {}
-    if (t !== "dark" && t !== "light") t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    // light by default; dark only when the visitor picks it with the theme button
+    if (t !== "dark") t = "light";
     document.documentElement.setAttribute("data-theme", t);
   })();
 </script>
