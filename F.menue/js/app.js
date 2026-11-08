@@ -63,7 +63,7 @@
       } else if (sec.type === "sized") {
         prices = sec.sizes.map(function (sz, i) {
           var p = it.prices[i];
-          return '<span class="ip' + (p == null ? " dash" : "") + '"><i>' + sz + '</i><b class="num">' +
+          return '<span class="ip' + (p == null ? " dash" : "") + (i === sec.highlight ? " hl" : "") + '"><i>' + sz + '</i><b class="num">' +
             (p == null ? "—" : p) + "</b></span>";
         }).join("");
       }
@@ -97,14 +97,15 @@
   }
 
   function sizeTable(sec) {
-    var head = '<div class="srow shead" role="row"><span></span>' + sec.sizes.map(function (s) {
-      return '<span class="sz" role="columnheader">' + s + "</span>";
+    function hl(i) { return i === sec.highlight ? " hl" : ""; }
+    var head = '<div class="srow shead" role="row"><span></span>' + sec.sizes.map(function (s, i) {
+      return '<span class="sz' + hl(i) + '" role="columnheader">' + s + "</span>";
     }).join("") + "</div>";
     var rows = sec.items.map(function (it) {
-      return '<div class="srow" role="row">' + names(it) + it.prices.map(function (p) {
+      return '<div class="srow" role="row">' + names(it) + it.prices.map(function (p, i) {
         return p == null
           ? '<span class="sp dash" role="cell" aria-label="غير متوفر">—</span>'
-          : '<span class="sp num" role="cell">' + p + "</span>";
+          : '<span class="sp num' + hl(i) + '" role="cell">' + p + "</span>";
       }).join("") + "</div>";
     }).join("");
     return '<div class="panel"><div class="stable" style="--n:' + sec.sizes.length + '" role="table">' +
@@ -123,12 +124,31 @@
     return badge + '<div class="v-cards">' + itemCards(sec) + '</div><div class="v-list">' + tiles + "</div>";
   }
 
+  // student offer banner; each item card shows its own student price
+  function studentPromo(sec) {
+    return '<div class="promo">' +
+      '<span class="promo-cap">' + icon("i-cap") + "</span>" +
+      '<div class="promo-txt"><p class="promo-kicker">عرض الطلاب</p>' +
+      '<p class="promo-main">خصم <b class="num">' + sec.studentDiscount + "</b> شيكل على كل أرجيلة</p>" +
+      '<p class="promo-sub" lang="en">Student discount on every shisha</p></div></div>';
+  }
+
+  function addons(sec) {
+    return '<div class="addons"><h3 class="addons-title">إضافات</h3><div class="panel"><ul class="plist">' +
+      sec.addons.map(function (a) {
+        return '<li class="pitem">' + names(a) + '<span class="leader" aria-hidden="true"></span>' +
+          '<span class="price">+' + a.price + "</span></li>";
+      }).join("") + "</ul></div></div>";
+  }
+
   function section(sec) {
     var body;
     if (sec.type === "sandwich") body = '<div class="v-cards">' + sandwichCards(sec) + '</div><div class="v-list">' + sandwichList(sec) + "</div>";
     else if (sec.type === "mojito") body = mojito(sec);
     else body = '<div class="v-cards">' + itemCards(sec) + '</div><div class="v-list">' +
       (sec.type === "single" ? priceList(sec) : sizeTable(sec)) + "</div>";
+    if (sec.studentDiscount) body = studentPromo(sec) + body;
+    if (sec.addons) body += addons(sec);
 
     return '<section class="section reveal' + (sec.signature ? " section--sig" : "") + '" id="' + sec.id + '" data-section>' +
       '<header class="section-head">' +
@@ -150,7 +170,8 @@
   panelsEl.innerHTML = menu.tabs.map(function (t) {
     var secs = menu.sections.filter(function (s) { return s.tab === t.id; });
     return '<div id="panel-' + t.id + '" role="tabpanel" aria-labelledby="tab-' + t.id + '" hidden>' +
-      '<nav class="chips" aria-label="التصنيفات"><div class="chips-row">' +
+      // a tab with a single section needs no category bar
+      '<nav class="chips" aria-label="التصنيفات"' + (secs.length < 2 ? " hidden" : "") + '><div class="chips-row">' +
       secs.map(function (s) {
         return '<button class="chip" type="button" data-target="' + s.id + '">' + esc(s.ar) + "</button>";
       }).join("") +
