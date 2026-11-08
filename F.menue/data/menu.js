@@ -8,7 +8,8 @@
 window.MENU = {
   tabs: [
     { id: "food", label: "أكل", icon: "i-sandwich" },
-    { id: "drinks", label: "مشروبات", icon: "i-cup" }
+    { id: "drinks", label: "مشروبات", icon: "i-cup" },
+    { id: "hookah", label: "أراجيل", icon: "i-hookah" }
   ],
   sections: [
     {
@@ -181,6 +182,22 @@ window.MENU = {
         { ar: "فراولة منجا", art: "shake-strawberry-mango", prices: [14, 16, 20] },
         { ar: "بينا كولادا", art: "shake-pina-colada", prices: [14, 16, 20] },
         { ar: "الوصفة المميزة", art: "shake-special", en: "Special Recipe", prices: [14, 16, 20], special: true }
+      ]
+    },
+    {
+      // prices: [السعر العادي، سعر الطلاب] — خصم الطلاب studentDiscount بينطرح من كل سعر
+      id: "hookah", tab: "hookah", ar: "أراجيل", en: "Shisha", icon: "i-hookah", type: "sized",
+      sizes: ["عادي", "طلاب"], highlight: 1, studentDiscount: 10,
+      addons: [{ ar: "بربيش صحي", en: "Healthy hose", price: 5 }],
+      items: [
+        { ar: "ليمون ونعنع", art: "hookah-lemon-mint", prices: [30, 20] },
+        { en: "Love 66", art: "hookah-love66", prices: [30, 20] },
+        { ar: "بطيخ ونعنع", art: "hookah-watermelon-mint", prices: [30, 20] },
+        { ar: "كيف", art: "hookah-kef", prices: [30, 20] },
+        { ar: "بلوبيري", art: "hookah-blueberry", prices: [30, 20] },
+        { ar: "تفاحتين مصري", art: "hookah-two-apples-egyptian", prices: [30, 20] },
+        { ar: "تفاحتين فاخر", art: "hookah-two-apples-fakher", prices: [30, 20] },
+        { ar: "تفاحتين نخلة", art: "hookah-two-apples-nakhla", prices: [35, 25] }
       ]
     }
   ]
