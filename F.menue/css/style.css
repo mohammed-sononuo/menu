@@ -195,6 +195,12 @@ button{font:inherit;color:inherit}
 .tel{display:inline-flex;align-items:center;gap:var(--space-2);padding:6px 16px;border-radius:var(--radius-pill);background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:var(--on-deep);text-decoration:none;font:700 17px/24px var(--font-latin);letter-spacing:.04em;transition:background .2s ease}
 .tel:hover{background:rgba(255,255,255,.24)}
 .tel .ill{font-size:18px}
+/* واتساب */
+.contact{display:flex;flex-direction:column;align-items:center;gap:var(--space-2)}
+.wa{display:inline-flex;align-items:center;gap:var(--space-2);padding:6px 16px;border-radius:var(--radius-pill);background:#FFFFFF;border:1px solid #FFFFFF;color:var(--ground-deep);text-decoration:none;font:700 15px/24px var(--font-ar);transition:transform .2s ease,box-shadow .2s ease}
+.wa:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.wa .ill{font-size:20px;color:#1FA855}
+@media (prefers-reduced-motion:reduce){.wa{transition:none}.wa:hover{transform:none}}
 .hours{display:inline-flex;align-items:center;gap:var(--space-3);text-align:start}
 .hours-ic{width:44px;height:44px;flex:none;color:var(--on-deep)}
 .ftr .hours p{display:flex;flex-direction:column;line-height:22px}
@@ -259,7 +265,8 @@ button{font:inherit;color:inherit}
   .section.section--sig{padding:var(--space-6)}
   .section--sig .section-head > .ill{font-size:72px}
   .ftr-grid{grid-template-columns:1.2fr 1fr 1fr 1.2fr;text-align:start;justify-items:stretch}
-  .ftr-grid .social{align-items:flex-start}
+  /* واتساب: .contact أُضيف هنا */
+  .ftr-grid .social,.ftr-grid .contact{align-items:flex-start}
   .panel{padding:var(--space-3) var(--space-5)}
   .stable{--col:72px}
   .pitem{padding:var(--space-4) 0}
